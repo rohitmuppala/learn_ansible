@@ -1,0 +1,10 @@
+---
+- name: Create a file with content and set permissions
+  hosts: multipass_vms
+  tasks:
+    - name: Create or overwrite /tmp/ansible_test.txt with content
+      copy:
+        dest: /tmp/ansible_test.txt
+        content: "Managed by Ansible"
+        mode: '0644'
+

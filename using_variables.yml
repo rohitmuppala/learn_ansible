@@ -1,0 +1,17 @@
+---
+- name: Using variables for package and service names
+  hosts: multipass_vms
+  vars:
+    package_name: nginx
+    service_name: nginx
+  tasks:
+    - name: Install package using variable
+      package:
+        name: "{{ package_name }}"
+        state: present
+    - name: Start service using variable
+      service:
+        name: "{{ service_name }}"
+        state: started
+        enabled: yes
+
