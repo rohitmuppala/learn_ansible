@@ -1,0 +1,6 @@
+- name: Run a play against the multipass VMs
+  hosts: multipass_vms
+  tasks:
+    - name: Ping
+      ansible.builtin.ping:
+

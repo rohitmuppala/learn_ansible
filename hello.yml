@@ -1,0 +1,8 @@
+- name: Print Hello World
+  hosts: multipass_vms
+  gather_facts: no
+  tasks:
+    - name: Displaying Hello World message
+      debug:
+        msg: "Hello, World!"
+

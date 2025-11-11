@@ -1,0 +1,19 @@
+- name: Setup Multipass VMs with basic packages
+  hosts: multipass_vms
+  become: yes
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install nginx web server
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
